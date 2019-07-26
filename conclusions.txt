@@ -8,35 +8,35 @@ fourth one is randomly filled with bool values eg [0, 1, 1, 0, 1, ..., 0]
 
 And there are several sorting algorithms that have the following results (in seconds) for different arrays:
 
-random    bubble ... 7.231569372700001
-sorted    bubble ... 0.0007029058999975746
-reversed  bubble ... 10.052912173800001
-bool      bubble ... 3.559766261600001
+random    bubble ... 7.231569372700001          0.01   %
+sorted    bubble ... 0.0007029058999975746      100    %
+reversed  bubble ... 10.052912173800001         0.007  %
+bool      bubble ... 3.559766261600001          0.02   %
 
-random    insert ... 2.207648028799997
-sorted    insert ... 0.0018370479000026307
-reversed  insert ... 4.117532813799997
-bool      insert ... 1.1239905165000095
+random    insert ... 2.207648028799997          0.083  %
+sorted    insert ... 0.0018370479000026307      100    %
+reversed  insert ... 4.117532813799997          0.045  %
+bool      insert ... 1.1239905165000095         0.163  %
 
-random    choice ... 2.064111055999996
-sorted    choice ... 2.0784758465000097
-reversed  choice ... 2.1129064194999954
-bool      choice ... 2.0503953657000125
+random    choice ... 2.064111055999996          99.336 %
+sorted    choice ... 2.0784758465000097         98.649 %
+reversed  choice ... 2.1129064194999954         97.041 %
+bool      choice ... 2.0503953657000125         100    %
 
-random    heap   ... 0.06021105289999582
-sorted    heap   ... 0.07125641040000233
-reversed  heap   ... 0.05715014989999645
-bool      heap   ... 0.03621864849999952
+random    heap   ... 0.06021105289999582        60.153 %
+sorted    heap   ... 0.07125641040000233        50.829 %
+reversed  heap   ... 0.05715014989999645        63.375 %
+bool      heap   ... 0.03621864849999952        100    %
 
-random    merge  ... 0.0498425862999909
-sorted    merge  ... 0.026691131600000518
-reversed  merge  ... 0.03350425179999661
-bool      merge  ... 0.0406810212000039
+random    merge  ... 0.0498425862999909         53.551 %
+sorted    merge  ... 0.026691131600000518       100    %
+reversed  merge  ... 0.03350425179999661        79.665 %
+bool      merge  ... 0.0406810212000039         65.611 %
 
-random    quick  ... 0.025454665000000886
-sorted    quick  ... 0.015224732599989466
-reversed  quick  ... 0.012359417000010354
-bool      quick  ... 0.021571766699992168
+random    quick  ... 0.025454665000000886       48.555 %
+sorted    quick  ... 0.015224732599989466       81.18  %
+reversed  quick  ... 0.012359417000010354       100    %
+bool      quick  ... 0.021571766699992168       57.294 %
 
 
 And the same tests for arrays of length 20000:
