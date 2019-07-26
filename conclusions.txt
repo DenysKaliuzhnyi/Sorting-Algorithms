@@ -1,0 +1,94 @@
+Tests
+
+We have 3 arrays of length 5000:
+first one is randomly filled with numbers in range 0..999
+second one is already sorted [0, 1, 2, ..., 4999]
+third one is reversed to second one [4999, 4998, 4997, ..., 0]
+fourth one is randomly filled with bool values eg [0, 1, 1, 0, 1, ..., 0]
+
+And there are several sorting algorithms that have the following results (in seconds) for different arrays:
+
+random    bubble ... 7.231569372700001
+sorted    bubble ... 0.0007029058999975746
+reversed  bubble ... 10.052912173800001
+bool      bubble ... 3.559766261600001
+
+random    insert ... 2.207648028799997
+sorted    insert ... 0.0018370479000026307
+reversed  insert ... 4.117532813799997
+bool      insert ... 1.1239905165000095
+
+random    choice ... 2.064111055999996
+sorted    choice ... 2.0784758465000097
+reversed  choice ... 2.1129064194999954
+bool      choice ... 2.0503953657000125
+
+random    heap   ... 0.06021105289999582
+sorted    heap   ... 0.07125641040000233
+reversed  heap   ... 0.05715014989999645
+bool      heap   ... 0.03621864849999952
+
+random    merge  ... 0.0498425862999909
+sorted    merge  ... 0.026691131600000518
+reversed  merge  ... 0.03350425179999661
+bool      merge  ... 0.0406810212000039
+
+random    quick  ... 0.025454665000000886
+sorted    quick  ... 0.015224732599989466
+reversed  quick  ... 0.012359417000010354
+bool      quick  ... 0.021571766699992168
+
+
+And the same tests for arrays of length 20000:
+NOTE: we increased array's length in 4 times, so lets check how it influenced on speed
+
+random    bubble ... 108.7911852059           f(4*x) = 15.044 * f(x)
+sorted    bubble ... 0.0029440414999953647    f(4*x) = 4.188  * f(x)
+reversed  bubble ... 149.5298725211           f(4*x) = 14.874 * f(x)
+bool      bubble ... 52.1718114930999         f(4*x) = 14.656 * f(x)
+
+random    insert ... 32.14136984350007        f(4*x) = 14.559 * f(x)
+sorted    insert ... 0.006158658399999695     f(4*x) = 3.352  * f(x)
+reversed  insert ... 63.33159976789993        f(4*x) = 15.381 * f(x)
+bool      insert ... 15.649960504800083       f(4*x) = 13.923 * f(x)
+
+random    choice ... 35.92059009209997        f(4*x) = 17.402 * f(x)
+sorted    choice ... 32.93942941360001        f(4*x) = 15.849 * f(x)
+reversed  choice ... 34.251364542199916       f(4*x) = 16.211 * f(x)
+bool      choice ... 32.00449269289984        f(4*x) = 15.609 * f(x)
+
+random    heap   ... 0.2872963418998552       f(4*x) = 4.773  * f(x)
+sorted    heap   ... 0.2982738478000101       f(4*x) = 4.186  * f(x)
+reversed  heap   ... 0.257481213400024        f(4*x) = 4.505  * f(x)
+bool      heap   ... 0.13520412439984283      f(4*x) = 3.733  * f(x)
+
+random    merge  ... 0.18268603229989822      f(4*x) = 3.665  * f(x)
+sorted    merge  ... 0.13843444849999287      f(4*x) = 5.186  * f(x)
+reversed  merge  ... 0.14852108810009668      f(4*x) = 4.433  * f(x)
+bool      merge  ... 0.16237969299991165      f(4*x) = 3.992  * f(x)
+
+random    quick  ... 0.10374164499999097      f(4*x) = 4.075  * f(x)
+sorted    quick  ... 0.0633913851998841       f(4*x) = 4.164  * f(x)
+reversed  quick  ... 0.06303804429999219      f(4*x) = 5.100  * f(x)
+bool      quick  ... 0.10298198850014159      f(4*x) = 4.774  * f(x)
+
+
+Conclusions:
+O(n^2) class:
+    1) Bubble sort is better for almost sorted array and
+       has disappointing result in other cases.
+    2) Sorting by insert works very quickly for almost sorted array,
+       quick with boolean data, has an average result in case of
+       common ordered array and demonstrates slow work in case of
+       worst ordered array.
+    3) Sorting by choice shows an average result irrespective
+       of the array’s elements order.
+
+O(n*log(n)) class:
+    1) Heap sort shows a good result.
+       The array’s elements order affects speed little
+       It is faster if data is boolean
+    1) Heap sort shows a super result.
+       The array’s elements order affects speed little
+    1) Quick sort shows an amazing result.
+       The array’s elements order affects speed little
