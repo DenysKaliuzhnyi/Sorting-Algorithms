@@ -40,7 +40,7 @@ bool      quick  ... 0.021571766699992168
 
 
 And the same tests for arrays of length 20000:
-NOTE: we increased array's length in 4 times, so lets check how it influenced on speed
+NOTE: we increased array's length in 4 times, so lets check how it influenced on time
 
 random    bubble ... 108.7911852059           f(4*x) = 15.044 * f(x)
 sorted    bubble ... 0.0029440414999953647    f(4*x) = 4.188  * f(x)
